@@ -1,0 +1,43 @@
+IMPORTANTE!
+Deixei o código para você copiar e jogar no seu!
+No metodo que foi criado getFindTaskByIdprojec eu usei no
+resultSet.getDate("data_atualizacao")); o nome do campo da minha tabela! Se na sua estiver 
+diferente,não esqueça de alterar!
+
+
+Observações:
+
+No seu método initComponentsModel() 
+você estava chamando o método loadTasks(19) carregando todas as 
+tarefas do banco de dados.
+Ou seja,não importa qual projeto você selecionada,sempre ia trazer todas
+as tarefas porque estava assim definido no código!
+
+Outra observação é que no seu método loadTasks(idproject) você
+chama chama o getAll da classe taskController passando como parameto
+o idproject!
+
+Mas observe no seu método getAll você tem seu sql listando
+todas as tarefas,em nenhum momento você utilizaou o parametro passado!
+Ou seja,o parametro idProject no seu getAll não faz nada,pode tirar já que
+getAll = busque todas as tarefas.
+
+Neste caso criei o método :
+getFindTaskByIdprojec(Que vai trazer somente as tarefas do PROJETO selecionado).
+
+Então vai precisar mudar na sua função loadTasks!
+
+Observe que o sql na fução getFindTaskByIdprojec:
+SELECT * FROM tasks where idProject = ?
+Indicando que você esta procurando tarefas de um projeto especifico.
+Como estava antes,ia trazer sempre todas as tarefas.
+Você pode fazer o teste do sql direto no banco de dados,se for o caso.
+
+SELECT * FROM tasks where idProject = ? (tarefas de um projeto especifico)
+SELECT * FROM tasks  (trás todas as tarefas)
+
+
+
+
+
+

@@ -1,0 +1,8 @@
+  public void loadTasks(int idProject) {
+    	
+        //chamando novo metodo que busca tarefa por id do projeto
+        List<Task> tasks = taskController.getFindTaskByIdprojec(idProject); 
+        taskModel.setTasks(tasks);
+
+        showTableTasks(!tasks.isEmpty());
+    }

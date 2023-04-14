@@ -1,0 +1,14 @@
+ public void initComponentsModel() {
+        projectsModel = new DefaultListModel();
+        loadProjects();
+
+        taskModel = new TaskTableModel();
+        jTableTasks.setModel(taskModel);
+        
+        if (!projectsModel.isEmpty()) {
+        	projectsList.setSelectedIndex(0);
+            int projectIndex = projectsList.getSelectedIndex();
+            Project project = (Project) projectsModel.get(projectIndex);
+            loadTasks(project.getId());//aqui sim,vai passar o id do projeto selecionado!!
+        }
+    }
