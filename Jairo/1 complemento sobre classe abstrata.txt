@@ -1,0 +1,55 @@
+Tudo bem,vamos a primeira dúvida sobre as Classes Abstratas e Interfaces.
+
+A classe padrão,você já entendeu.
+Agora,vamos a um exemplo muito utilizado para as 'Abstratas'.
+Como você já sabe,ela é uma classe que não pode ser instanciada,apenas herdada.
+Digamos que você tenha duas classes(Conta Poupanca,Conta Corrente).
+
+Ambas as classe tem atributos e métodos iguais e também suas particularidades,ex:
+
+Poupanca{
+numero da conta
+agencica
+
+depositar();
+consultarSaldo();
+}
+
+Corrente{
+numero da conta
+agencica
+
+depositar();
+consultarSaldo();
+transferenciaTed(); 
+}
+
+No exemplo acima,digamos,que somente a Corrente pode fazer transferencia,a poupançã não!
+No nosso exemplo,claro,código pequeno,poucas contas etc..mas imagina um
+sistema maior ,com inúmeros tipos de contas,muitos atributos e metodos etc..
+
+Toda vez que for implementar um código para um novo tipo de conta,vai ter que reescrever os mesmo códigos,por exemplo,uma conta
+salario também tem numero da conta,agencia,pode sacar,transferir etc..
+
+Neste nosso caso,entra a classe Abstrata,que seria a classe Conta:
+
+Conta{
+numero da conta
+agencica
+
+depositar();
+consultarSaldo();
+}
+
+Então ,quando eu for criar meus tipos de contas(Corrente,Salario,Poupanca) eu herdaria da classe CONTA os atributos que são comuns a elas ! Ou seja,
+a classe conta é minha CLASSE MAIS GENERICA!
+Assim,eu tenho um reaproveitamento de código!!
+Herdo o que é comum aos tipos de conta e implemento o que é especifico de cada um(no nosso exemplo,somente a conta corrente e salario pode fazer transferencia,a poupança não!)
+
+Não posso instanciar logo a classe Conta?
+
+Se você fosse utilizar a classe conta para INSTANCIAR,você teria que implementar nela o método transferenciaTed(),o que geraria um erro 
+na regra de negócio,já que se você fosse utilizar ela para uma conta poupança,esse método não podeira ser utilizado por ela,já que na nossa regra,poupança só pode
+depositar e consultar saldo!
+
+
