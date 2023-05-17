@@ -17,8 +17,8 @@ Exemplo:
 obterCursos():Observable<Curso[]>{   
     return this.http.get(this.url+"listar")   
     .pipe( map((res:any) =>{    
-       this.vetor = res; // remover o res['curso']
-       debugger
+       this.vetor = res; 
+       debugger //com isso,vc pode ver os dados vindo do seu banco de dados via console !
        return this.vetor;
       }))
 }  
