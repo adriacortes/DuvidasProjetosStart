@@ -1,0 +1,19 @@
+1. Colocar o . no arquivo .htaccess (vai resolver o problema de cors) arquivo não é htaccess e sim .htaccess
+
+2. Comentar a linha que imprime o vetor //var_dump($cursos) em listar.php
+
+3. Para visualizar os dados no formato Json ao clicar em listar.php coloque 
+no lugar do var_dump :
+echo json_encode($cursos); // imprime dados no formato Json
+
+4. metodo obter cursos:       
+      
+    obterCursos():Observable<Curso[]>{   
+      return this.http.get(this.url+"listar")   
+      .pipe( map((res:any) =>{    
+         this.vetor = res; // remover o res['curso']
+         return this.vetor;
+        }
+        )
+      )
+    }
