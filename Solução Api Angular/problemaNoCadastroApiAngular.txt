@@ -1,0 +1,66 @@
+
+# Alteração na API cadastrar.php
+
+$nomeCurso = $extrair->nomeCurso;
+$valorCurso =$extrair->valorCurso;
+
+
+$cursos = [
+    'nomeCurso' => $nomeCurso,
+    'valorCurso' => $valorCurso
+]; //faltou ;
+
+
+# No Front
+
+1.
+
+Antes:
+<button (click)="cadastro(this.curso)">Cadastrar</button>
+Depois:
+<button (click)="cadastro()">Cadastrar</button> 
+
+Formulário completo:
+
+    <h1>Cadastrar,alterar ou remover um Curso</h1>
+    <form>
+        <label>Nome do curso:</label>
+        <input type="text" name="nomeCurso" [(ngModel)]="curso.nomeCurso">
+        <br><br>
+    
+        <label>Valor:</label>
+        <input type="text" name="valorCurso" [(ngModel)]="curso.valorCurso">
+        <br><br>
+    
+    <button (click)="cadastro()">Cadastrar</button> <br><br>
+    <button (click)="alterar()">Alterar</button>
+    </form>
+
+2. Em curso.component.ts
+
+ //Cadastrar
+  cadastro(){
+    this.curso_service.cadastrarCurso(this.curso).subscribe(
+      (res: Curso) => {
+        //Limpar os atributos
+        this.curso.nomeCurso = "";
+        this.curso.valorCurso = 0;
+        //atualizando listagem com o novo cadastro
+        this.selecao(); //Não precisa do vetor. O método selecao já trás todos os dados do banco.
+      } 
+    );
+  }
+
+3.Em cursos.service:
+
+cadastrarCurso(curso:Curso):Observable<Curso>{
+    return this.http.post<Curso>(this.url+'cadastrar',curso) 
+  }
+
+Você esta fazendo cadastro de UM DADO não precisa usar vetor.Como a API só retorna um status 200 ao cadastrar,basta o código acima para funcionar.
+
+
+
+
+
+
