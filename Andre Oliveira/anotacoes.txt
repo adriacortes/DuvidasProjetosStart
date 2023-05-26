@@ -1,0 +1,18 @@
+Ex.:
+
+        <input 
+            type="text" 
+            placeholder="Digite seu nome" 
+            formControlName="nome"
+
+            [class.valid]="formContato.controls['nome'].valid" 
+            [class.invalid]="formContato.controls['nome'].invalid && 
+            (formContato.controls['nome'].touched || formContato.controls['nome'].dirty)" 
+        />
+
+
+Antes:
+
+formContato.controls['nome'].touched || formContato.controls['nome'].dirty"
+correção:
+(formContato.controls['nome'].touched || formContato.controls['nome'].dirty)" Colocar () nos demais campos!
