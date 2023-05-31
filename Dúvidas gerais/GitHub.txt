@@ -1,0 +1,28 @@
+Sobre o GitHub.
+
+Git é um programa que versiona seus códigos, o GitHub é um servidor na 
+nuvem que ARMAZENA SEUS CÓDIGOS.
+
+Com seu código no GitHub eu consigo baixá-lo para ajudar na correção de projetos quando o erroé no CÓDIGO.
+
+Por exemplo, você teve um problema agora, mas não diretamente erro no código, no 
+caso foi na configuração do projeto, nestes problemas, ajudamos com as tutorias de configuração.
+
+Digamos que mais para frente você tenha um erro no código.
+
+Ex:
+Olha Ádria, eu fiz o cadastro igual o professor fez, mas por algum
+motivo os dados não estão cadastrando no banco de dados!
+
+Ok, eu pego o link do repositório do seu código e executo na minha máquina para análise.
+
+Sem falar, que serve também como um portfólio para você.
+
+Segue um link ensinando a como utilizar no YouTube:
+https://www.youtube.com/watch?v=UBAX-13g8OM
+
+Site para cadastro:
+https://github.com/
+
+Uma dica é utilizar o GitHubDesktop caso não queira utilizar via linha de comando:
+https://desktop.github.com/
