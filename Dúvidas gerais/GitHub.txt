@@ -3,7 +3,7 @@ Sobre o GitHub.
 Git é um programa que versiona seus códigos, o GitHub é um servidor na 
 nuvem que ARMAZENA SEUS CÓDIGOS.
 
-Com seu código no GitHub eu consigo baixá-lo para ajudar na correção de projetos quando o erroé no CÓDIGO.
+Com seu código no GitHub eu consigo baixá-lo para ajudar na correção de projetos quando o erro é no CÓDIGO.
 
 Por exemplo, você teve um problema agora, mas não diretamente erro no código, no 
 caso foi na configuração do projeto, nestes problemas, ajudamos com as tutorias de configuração.
