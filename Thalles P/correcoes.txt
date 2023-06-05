@@ -1,0 +1,29 @@
+Correção:
+
+1. No construtor da classe Project.java
+remova a linha do construtor vazio:
+
+>> throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+
+2. Em ProjectController.java
+
+>>Linha 111 (Método getAll)
+Na linha project.setId(resultSet.getInt("idprojects")); é
+o ID do projeto não da tarefa.
+
+>>Na linha 115 o updateddAt não seria updatedAt!
+
+
+3. Em task.java
+
+public void setIsCompleted(boolean isCompledted) {
+        this.isCompledted=isCompledted;
+    }
+
+ public void setNotes(String notes) {
+        this.notes = notes;
+    }
+
+ public String getNotes() {
+        return notes;
+    }
