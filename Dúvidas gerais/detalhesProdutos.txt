@@ -1,0 +1,9 @@
+# No service:
+getOne(produtoId: number){
+return this.produtos.find(produto => produto.id == produtoId); // Utilizar == e não =
+}
+
+
+# produtos-routing.module.ts
+você pode verificar se a linha esta igual esse:
+{ path: ':id', component: DetalhesProdutoComponent} // se atendar ao : antes do ID
