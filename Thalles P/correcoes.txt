@@ -1,9 +1,12 @@
 Correção:
 
 1. No construtor da classe Project.java
-remova a linha do construtor vazio:
+remova a linha do construtor sem parametros:
+
 
 >> throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+
+public Project() {} 
 
 2. Em ProjectController.java
 
@@ -12,6 +15,7 @@ Na linha project.setId(resultSet.getInt("idprojects")); é
 o ID do projeto não da tarefa.
 
 >>Na linha 115 o updateddAt não seria updatedAt!
+ project.setUpdatedAt(resultSet.getDate("updatedAt"));
 
 
 3. Em task.java
