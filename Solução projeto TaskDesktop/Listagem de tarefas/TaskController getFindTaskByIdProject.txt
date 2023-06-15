@@ -1,4 +1,12 @@
 #Criar esse método em TaskController
+Obs.: Mesmo método getAll ,você só vai alterar o nome para getFindTaskByIdprojec.Neste caso,se quiser deixar
+o metodo getAll,basta copiar e colar o mesmo alterando no nome.
+
+Observe que o metodo getAll recebe um id e filtra as tarefas com esse ID(que é o ID do projeto)!
+Ou seja,ele não busca todas as tarefas,como diz o nome do método getAll.
+
+Vai ficar assim:
+Atenção! O nome do meus atributos do banco de dados pode não ser igual ao seu,se atentar a isso caso for copiar.
 
 public List<Task> getFindTaskByIdprojec(int id) {
         String sql = "SELECT * FROM tasks where idProject = ?";
