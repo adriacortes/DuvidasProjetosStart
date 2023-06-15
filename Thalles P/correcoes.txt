@@ -1,33 +1,30 @@
-Correção:
+1. Em Task.java
 
-1. No construtor da classe Project.java
-remova a linha do construtor sem parametros:
-
-
->> throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-
-public Project() {} 
-
-2. Em ProjectController.java
-
->>Linha 111 (Método getAll)
-Na linha project.setId(resultSet.getInt("idprojects")); é
-o ID do projeto não da tarefa.
-
->>Na linha 115 o updateddAt não seria updatedAt!
- project.setUpdatedAt(resultSet.getDate("updatedAt"));
+Remova os metodos:
 
 
-3. Em task.java
-
-public void setIsCompleted(boolean isCompledted) {
-        this.isCompledted=isCompledted;
+public String getNotes() {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 
- public void setNotes(String notes) {
-        this.notes = notes;
+    public void setNotes(String string) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 
- public String getNotes() {
-        return notes;
+    public void setIsCompleted(boolean aBoolean) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
+
+
+
+2. Em Project.java
+
+Cria o construtor vazio:
+
+public Project() {}
+
+
+3.Em TaskDialogScreen.java
+Erro linha 200
+metodo errado.
+Usar task.setIsCompleted(false);
