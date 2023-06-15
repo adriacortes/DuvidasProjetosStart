@@ -1,0 +1,61 @@
+1.
+
+Sempre que for usar uma data,você precisa informar a data para a mesma ser salva no banco de dados!
+Você pode chamar a de criação no construtor da classe,então vai ficar assim:
+
+Em Project.java
+
+ public Project(){
+ this.createdAt = new Date();
+ }
+ 
+
+
+2.Em ProjectController.java
+
+!! No seu MainScren não tem no fieldLista o campo de data de atualização,por isso o erro!
+
+Ao cadastrar um projeto,você não precisa salva a data de atualização,
+só precisa no momento a data de criação!
+A data de atualização é usada no método UPDATE(Atualizar).
+Pode remover do SQL e do statement!
+
+
+#Vai ficar assim:
+
+String sql = "INSERT INTO projects(name, description, createdAt) VALUES (?, ?, ?)";
+
+statement.setString(1, project.getName());
+statement.setString(2, project.getDescription());
+statement.setDate(3, new Date(project.getCreatedAt().getTime()));
+
+Método completo:
+
+public void save(Project project) throws SQLException{
+       
+        String sql = "INSERT INTO projects(name, description, createdAt) VALUES (?, ?, ?)";
+        
+        Connection connection = null;
+        PreparedStatement statement = null;
+        
+        try {
+            // Criar uma conex�o com o banco
+            connection = ConnectionFactory.getConnection();
+            // Cria um PreparedStament, classe usada para executar a query
+            statement = connection.prepareStatement(sql);
+            
+            statement.setString(1, project.getName());
+            statement.setString(2, project.getDescription());
+            statement.setDate(3, new Date(project.getCreatedAt().getTime()));
+         //   statement.setDate(4, new Date(project.getUpdatedAt().getTime()));
+            
+            // Executa a sql para inser��o dos dados
+                statement.execute();
+            } catch (SQLException ex){
+                throw new RuntimeException("Erro ao salvar o projeto", ex);
+            } finally {
+                ConnectionFactory.closeConnection(connection, statement);
+        }
+        
+        
+    }
