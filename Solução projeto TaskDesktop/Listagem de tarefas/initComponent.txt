@@ -1,4 +1,6 @@
- public void initComponentsModel() {
+#Método em MainScreen.java
+
+public void initComponentsModel() {
         projectsModel = new DefaultListModel();
         loadProjects();
 
