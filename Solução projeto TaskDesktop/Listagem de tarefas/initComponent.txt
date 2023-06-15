@@ -1,4 +1,4 @@
-#Método em MainScreen.java
+# Método em MainScreen.java
 
 public void initComponentsModel() {
         projectsModel = new DefaultListModel();
@@ -6,11 +6,12 @@ public void initComponentsModel() {
 
         taskModel = new TaskTableModel();
         jTableTasks.setModel(taskModel);
-        
+
+        //adicionar
         if (!projectsModel.isEmpty()) {
-        	projectsList.setSelectedIndex(0);
-            int projectIndex = projectsList.getSelectedIndex();
+            jListProjects.setSelectedIndex(0);
+            int projectIndex = jListProjects.getSelectedIndex();
             Project project = (Project) projectsModel.get(projectIndex);
-            loadTasks(project.getId());//aqui sim,vai passar o id do projeto selecionado!!
+            loadTasks(project.getId());//vai carregar as tarefas de acordo com id do projeto selecionado
         }
     }
