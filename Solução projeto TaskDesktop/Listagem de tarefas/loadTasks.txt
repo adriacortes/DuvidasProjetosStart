@@ -1,10 +1,9 @@
-##Método em MainScreen.java
+# Método em MainScreen.java
 
 public void loadTasks(int idProject) {
     	
         //chamando novo metodo que busca tarefa por id do projeto
-        List<Task> tasks = taskController.getFindTaskByIdprojec(idProject); 
+        List<Task> tasks = taskController.getAll(idProject);
         taskModel.setTasks(tasks);
-
-        showTableTasks(!tasks.isEmpty());
+        showJTableTasks(!tasks.isEmpty());
     }
