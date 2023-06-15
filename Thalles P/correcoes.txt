@@ -17,7 +17,7 @@ public String getNotes() {
 
 
 
-2. Em Project.java
+2. Em Project.java (imagem 1)
 
 Cria o construtor vazio:
 
