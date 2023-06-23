@@ -1,11 +1,15 @@
-1. Colocar o . no arquivo .htaccess (vai resolver o problema de cors) arquivo não é htaccess e sim .htaccess
+Fazer cada passo abaixo para o método obterCurso funcionar.
 
-2. Comentar a linha que imprime o vetor //var_dump($cursos) em listar.php Obrigatorio para seu metodo no FRONT funcionar. 
+1.Problema de Cors:
+Colocar o . no arquivo .htaccess (vai resolver o problema de cors) arquivo não é htaccess e sim .htaccess
 
-3.Dados no formato Json em listar.php coloque no lugar do var_dump :
-echo json_encode($cursos); // imprime dados no formato Json. Obrigatorio para seu metodo no FRONT funcionar. 
+2. Comentar a linha que imprime o vetor no arquivo listar.php (Obrigatorio para seu metodo no FRONT funcionar)
+//var_dump($cursos) 
 
-4. metodo obter cursos:       
+3.Em listar.php coloque o seguinte: (imprime dados no formato Json. Obrigatorio para seu metodo no FRONT funcionar.)
+echo json_encode($cursos);  
+
+4. Atualize seu método de Obter cursos:       
       
     obterCursos():Observable<Curso[]>{   
       return this.http.get(this.url+"listar")   
