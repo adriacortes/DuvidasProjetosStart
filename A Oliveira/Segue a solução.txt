@@ -1,6 +1,17 @@
-Formulario :
+#Primeira coisa,atualiza o formulario:
 
-<h1>Cadastrar,alterar ou remover um Curso</h1>
+<h1>Gerenciamento de Cursos</h1>
+<table border="1">
+  <thead>Listagem de cursos</thead>
+  <tr *ngFor="let v of vetor">
+    <td>{{v.nomeCurso}}</td>
+    <td>{{v.valorCurso}}</td>
+    <td><button (click)="selecionarCurso(v)">Selecionar curso</button></td>
+  </tr>
+</table>
+<br><br>
+
+<h2>Cadastrar,Alterar ou Remover um Curso</h2>
 <form (ngSubmit)="cadastrar()"> <!-- faltou submit aqui-->
     <label for="nomeCurso" >Nome do curso:</label> <!-- faltou for -->
     <input type="text" name="nomeCurso" [(ngModel)]="curso.nomeCurso"> 
@@ -8,11 +19,16 @@ Formulario :
     <label for="valorCurso" >Valor do curso:</label> <!-- faltou for -->
     <input type="text" name="valorCurso" [(ngModel)]="curso.valorCurso"> 
     <br><br>
-    
-    <button (click)="cadastrar()">Cadastrar</button> <br><br>
-    <button (click)="alterar()">Alterar</button> <!-- remover this.curso do alterar- funcao sem param -->
-    <button (click)="remover()">Remover</button><!-- altere no nome do bt-->
 </form>
+
+<!-- BUTTON FORA DO FORM -->
+<button (click)="cadastrar()">Cadastrar</button> <br>
+<button (click)="alterar()">Alterar</button> <!-- remover this.curso do alterar- funcao sem paramametro ! -->
+<button (click)="remover()">Remover</button><!-- altere no nome do bt estava alterar-->
+
+
+
+
 
 
 ----------------------------------------------------------------------------------------------------
