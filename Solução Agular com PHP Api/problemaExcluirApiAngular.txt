@@ -34,3 +34,5 @@ removerCurso(id: any): Observable<Curso>
     </tr>
 </table>
 
+ATENÇÃO,ATUALIZAR API EXCLUIR.PHP
+https://github.com/adriacortes/ApiAngularComPhpProWay/blob/main/excluir.php
