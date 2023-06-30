@@ -1,26 +1,30 @@
 
-# Alteração na API cadastrar.php
+1. Alteração na API cadastrar.php
 
+#serarando os dados JSON
 $nomeCurso = $extrair->nomeCurso;
 $valorCurso =$extrair->valorCurso;
 
-
+#Exportar dados
 $cursos = [
     'nomeCurso' => $nomeCurso,
     'valorCurso' => $valorCurso
-]; //faltou o ;
+]; 
+
+#Remova ou comente a linha 
+//json_encode(['curso'] => $curso);
 
 
-# No Front
+2.No Front
 
-1.
+Observação ao chamado das funções! Não tem parametro this.curso nos métodos !!!
 
-Antes:
+#Antes:
 <button (click)="cadastro(this.curso)">Cadastrar</button>
-Depois:
+#Depois:
 <button (click)="cadastro()">Cadastrar</button> 
 
-Formulário completo:
+#Formulário completo:
 
     <h1>Cadastrar,alterar ou remover um Curso</h1>
     <form>
