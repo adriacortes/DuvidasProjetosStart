@@ -34,16 +34,20 @@
 -------------------------------------------------------
 3. ProjectDialogScreen.java
 
- private void jLabelToolBarSaveMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelToolBarSaveMouseClicked
-        // TODO add your handling code here:
+private void jLabelToolBarSaveMouseClicked(java.awt.event.MouseEvent evt) {
+        
          try {
+            if(!jTextFieldName.getText().isEmpty()){ // CONDICAO: se o texfield(nome) não estiver vazio!
                 Project project = new Project();
                 project.setName(jTextFieldName.getText());
                 project.setDescription(jTextAreaDescription.getText());
                 controller.save(project);
                 JOptionPane.showMessageDialog(rootPane, "Projeto salvo com sucesso");
                 this.dispose();
-
+            } else {
+                JOptionPane.showMessageDialog(rootPane, "O projeto nao foi "
+                        + "salvo, pois o campo nome nao foi preenchido");
+            }
         } catch (Exception ex) {
             JOptionPane.showMessageDialog(rootPane, ex.getMessage());
         }
