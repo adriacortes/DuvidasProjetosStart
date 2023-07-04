@@ -1,0 +1,50 @@
+1. Método   public void decorateTableTask()
+
+  É j não J em jTableTasks!
+ 
+  jTableTasks.getColumnModel().getColumn(4).setCellRenderer(
+                new ButtonColumnCellRederer("edit"));
+
+  
+
+-------------------------------------------------------
+2. Corrigir método showJTableTasks!
+
+   private void showJTableTasks(boolean isEmptyTable) {
+        if (isEmptyTable) {
+            if (jPanelEmptyList.isVisible()) {
+                jPanelEmptyList.setVisible(false);
+                jPanel5.remove(jPanelEmptyList);
+            }
+
+            jPanel5.add(jScrollPaneTasks);
+            jScrollPaneTasks.setVisible(true);
+            jScrollPaneTasks.setSize(jPanel5.getWidth(), jPanel5.getHeight());
+        } else {
+            if (jScrollPaneTasks.isVisible()) { aqui tinha um ; ao invés de abrir e fechar o bloco { }
+                jScrollPaneTasks.setVisible(false);
+                jPanel5.remove(jScrollPaneTasks);
+            }
+            //Esse bloco estava fora do else!
+            jPanel5.add(jPanelEmptyList);
+            jPanelEmptyList.setVisible(true);
+            jPanelEmptyList.setSize(jPanel5.getWidth(), jPanel5.getHeight());
+        }
+    }
+-------------------------------------------------------
+3. ProjectDialogScreen.java
+
+ private void jLabelToolBarSaveMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelToolBarSaveMouseClicked
+        // TODO add your handling code here:
+         try {
+                Project project = new Project();
+                project.setName(jTextFieldName.getText());
+                project.setDescription(jTextAreaDescription.getText());
+                controller.save(project);
+                JOptionPane.showMessageDialog(rootPane, "Projeto salvo com sucesso");
+                this.dispose();
+
+        } catch (Exception ex) {
+            JOptionPane.showMessageDialog(rootPane, ex.getMessage());
+        }
+    }//GEN-LAST:event_jLabelToolBarSaveMouseClicked

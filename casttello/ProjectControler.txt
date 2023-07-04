@@ -1,9 +1,0 @@
-public void Save (Project project){
-        String sql = "INSERT INTO projects(name,"
-        		+ "description,"
-        		+ " createdAt)"
-        		+ " VALUES (?, ?, ?)";
-
-
-Ou,como é pequeno,pode ser:
-String sql = "INSERT INTO projects(name, description, createdAt) VALUES (?, ?, ?)";
