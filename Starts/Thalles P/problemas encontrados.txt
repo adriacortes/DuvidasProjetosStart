@@ -54,3 +54,7 @@ private void jLabelToolBarSaveMouseClicked(java.awt.event.MouseEvent evt) {
             JOptionPane.showMessageDialog(rootPane, ex.getMessage());
         }
     }//GEN-LAST:event_jLabelToolBarSaveMouseClicked
+-------------------------------------------------------
+4. EM TaskDialogScreen.java (tarefa não gravava o nome)
+Linha 199 :  task.setName(jTextFieldName.getText());  //é getText no final
+
