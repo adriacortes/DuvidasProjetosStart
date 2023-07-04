@@ -8,10 +8,10 @@
   
 
 -------------------------------------------------------
-2. Corrigir método showJTableTasks!
+2. Corrigir método showJTableTasks! em MainScreen.java
 
-   private void showJTableTasks(boolean isEmptyTable) {
-        if (isEmptyTable) {
+   private void showJTableTasks(boolean hasTasks) {
+        if (hasTasks) {
             if (jPanelEmptyList.isVisible()) {
                 jPanelEmptyList.setVisible(false);
                 jPanel5.remove(jPanelEmptyList);
@@ -20,8 +20,10 @@
             jPanel5.add(jScrollPaneTasks);
             jScrollPaneTasks.setVisible(true);
             jScrollPaneTasks.setSize(jPanel5.getWidth(), jPanel5.getHeight());
-        } else {
-            if (jScrollPaneTasks.isVisible()) { aqui tinha um ; ao invés de abrir e fechar o bloco { }
+        } else 
+        {
+            if (jScrollPaneTasks.isVisible())  //aqui tinha um ; ao invés de abrir e fechar o bloco { }
+            { 
                 jScrollPaneTasks.setVisible(false);
                 jPanel5.remove(jScrollPaneTasks);
             }
@@ -29,7 +31,7 @@
             jPanel5.add(jPanelEmptyList);
             jPanelEmptyList.setVisible(true);
             jPanelEmptyList.setSize(jPanel5.getWidth(), jPanel5.getHeight());
-        }
+        }//fimelse
     }
 -------------------------------------------------------
 3. ProjectDialogScreen.java
