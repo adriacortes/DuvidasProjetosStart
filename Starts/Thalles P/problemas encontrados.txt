@@ -1,14 +1,5 @@
-1. Método   public void decorateTableTask()
 
-  É j não J em jTableTasks!
- 
-  jTableTasks.getColumnModel().getColumn(4).setCellRenderer(
-                new ButtonColumnCellRederer("edit"));
-
-  
-
--------------------------------------------------------
-2. Corrigir método showJTableTasks! em MainScreen.java
+1. Corrigir método showJTableTasks! em MainScreen.java
 
    private void showJTableTasks(boolean hasTasks) {
         if (hasTasks) {
@@ -34,7 +25,7 @@
         }//fimelse
     }
 -------------------------------------------------------
-3. ProjectDialogScreen.java
+2. ProjectDialogScreen.java
 
 private void jLabelToolBarSaveMouseClicked(java.awt.event.MouseEvent evt) {
         
@@ -55,6 +46,6 @@ private void jLabelToolBarSaveMouseClicked(java.awt.event.MouseEvent evt) {
         }
     }//GEN-LAST:event_jLabelToolBarSaveMouseClicked
 -------------------------------------------------------
-4. EM TaskDialogScreen.java (tarefa não gravava o nome)
+3. EM TaskDialogScreen.java (tarefa não gravava o nome)
 Linha 199 :  task.setName(jTextFieldName.getText());  //é getText no final
 
