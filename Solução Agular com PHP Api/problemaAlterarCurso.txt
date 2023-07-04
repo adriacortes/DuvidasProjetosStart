@@ -1,3 +1,5 @@
+NÃO SE ESQUEÇA DE ATUALIZAR O FORMULARIO! Arquivo problemaAlterarCursoFormulario
+
 1. Em curso.service.ts
 
 alterarCurso(curso:Curso):Observable<Curso>{
