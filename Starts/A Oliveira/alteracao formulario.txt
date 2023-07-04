@@ -1,0 +1,40 @@
+1. ALTERAÇÃO NO FORMULÁRIO:
+
+1.1 Em <form (ngSubmit)="salvar()"> Altere de cadastro() para salvar()
+
+1.2.Altere o nome do botão CADASTRAR para SALVAR!
+
+1.3.No formulário só vai ter 2 botões(Salvar e Excluir).
+
+ATENÇÃO!
+o botão SALVAR fica dentro do <form>
+o botão EXCLUIR fica fora do  <form> !
+
+# Formulario completo:
+
+<h1>Gerenciamento de Cursos</h1>
+<form (ngSubmit)="salvar()">  <!-- atenção ao nome do metodo no submit -->
+<label for="nomeCurso"  >Curso </label>
+<input name="nomeCurso" [(ngModel)]="curso.nomeCurso" type="text">
+<br>
+<label for="valorCurso" >Valor </label>
+<input  name="valorCurso" [(ngModel)]="curso.valorCurso" type="number">
+<br><br>
+<button type="submit">Salvar</button>  <!-- nome do botão agora é cadastrar-->
+</form>  
+
+<section>
+    <button (click)="remover()">Excluir</button>  <!-- Botão exluir segue igual!-->
+</section>
+
+
+<table border="1">
+    <tr *ngFor="let v of vetor">
+        <td>{{v.idCurso}}</td>
+        <td>{{v.nomeCurso}}</td>
+        <td>{{v.valorCurso}}</td>
+        <td><button (click)="selecionarCurso(v)">Selecionar curso</button></td>
+    </tr>
+</table>
+
+

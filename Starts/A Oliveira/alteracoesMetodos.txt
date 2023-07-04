@@ -1,0 +1,38 @@
+1. Em curso.service.ts
+
+alterarCurso(curso:Curso):Observable<Curso>{
+    return this.http.put<Curso>(this.url+'alterar',curso)
+  }
+  
+2.Em curso.component.ts 
+
+ //METODO PARA UPDATE
+ alterar()
+  {
+   this.curso_service.alterarCurso(this.curso).subscribe(
+    (res: Curso) => {
+      this.curso.nomeCurso="";
+      this.curso.valorCurso=0;
+      this.selecao();
+      alert("Curso de ID "+this.curso.idCurso+" alterado com sucesso!" )
+    }
+   );
+    
+  }
+  
+   salvar()
+   {
+    //Se o ID do curso for undefined quer dizer que é um NOVO curso,ou seja,é para cadastrar!
+    if(this.curso.idCurso == undefined)
+    {
+      this.cadastro();//chama o método de cadastro
+    }else 
+    {
+      this.alterar();
+	  //Se o curso tiver ID é porque ele foi selecionado! ou seja,podemos excluir ou alterar! Neste caso,ao
+      //clicar em salvar,como faz a verificação do ID,se for diferent de UNDEFINED,ou seja,cai no else,vai
+      //ser chamado o método de alterar!
+    }
+
+  }
+  
