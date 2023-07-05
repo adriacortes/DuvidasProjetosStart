@@ -9,19 +9,21 @@ alterarCurso(curso:Curso):Observable<Curso>{
 2.Em curso.component.ts 
 
  //METODO PARA UPDATE
- alterar()
+  alterar()
   {
    this.curso_service.alterarCurso(this.curso).subscribe(
     (res: Curso) => {
+      alert("Curso de ID "+this.curso.idCurso+" alterado com sucesso!" )
+      //Limpando dados do curso
+      this.curso.idCurso=undefined;
       this.curso.nomeCurso="";
       this.curso.valorCurso=0;
       this.selecao();
-      alert("Curso de ID "+this.curso.idCurso+" alterado com sucesso!" )
     }
    );
-    
   }
-  
+
+   //METODO SALVAR - RESPONSAVEL POR CHAMAR OS METODOS DE CADASTRAR OU ATUALIZAR
    salvar()
    {
     //Se o ID do curso for undefined quer dizer que é um NOVO curso,ou seja,é para cadastrar!
