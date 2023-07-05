@@ -1,0 +1,41 @@
+#CORREÇÃO ALTERAR REGISTRO
+
+1. Seu método alterarCurso() em services esta incorreto. Compara com o que passei.
+
+2. Fiz uma mudança no método alterar() em curso.component.ts
+
+https://github.com/adriacortes/DuvidasProjetosStart/blob/main/Solu%C3%A7%C3%A3o%20Agular%20com%20PHP%20Api/4%20problemaAlterarCurso.txt
+
+3. atualiz sua API alterar.php
+
+https://github.com/adriacortes/ApiAngularComPhpProWay/blob/main/alterar.php
+
+----------------------------------------------------------------------------------------------------------------
+#PROBLEMA REMOVER
+
+Seu método esta incorreto!
+
+//Remover
+  remover(){
+   this.curso_service.removerCurso(this.curso.idCurso).subscribe
+      //Limpar campos
+      this.curso.nomeCurso = "";
+      this.curso.valorCurso = 0;
+      //Atualizar listagem
+      this.selecao();
+ }
+
+
+Método correto:
+
+ //Remover
+  remover(){//aqui
+    this.curso_service.removerCurso(this.curso.idCurso).subscribe(
+      (res : Curso) => {
+        this.curso.nomeCurso = "";
+        this.curso.valorCurso = 0;
+        this.selecao();
+
+      }
+    );
+  }
