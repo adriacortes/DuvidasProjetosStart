@@ -4,11 +4,12 @@
 
 1.2.Altere o nome do botão CADASTRAR para SALVAR!
 
-1.3.No formulário só vai ter 2 botões(Salvar e Excluir).
+1.3.No formulário só vai ter 2 botões(Salvar e Excluir). Remova o botão ALTERAR!
 
 ATENÇÃO!
 o botão SALVAR fica dentro do <form>
 o botão EXCLUIR fica fora do  <form> !
+O botão SALVAR vai res responsavel por chamar o MÉTODO DE CADASTRAR OU ATUALIZAR!
 
 # Formulario completo:
 
