@@ -1,0 +1,21 @@
+ATENÇÃO! No seu método SAVE vc faz um INSERT e passa duas datas, que são a CreationAt
+e UpdateAt ! 
+
+"INSERT INTO projects (Name,Description,CreationAt,UpdateAt) VALUES"
+                + "(?,?,?,?)";
+
+Ate aqui tudo OK,mas onde você define sua data ?
+
+Qual data vai salvar no banco de dados!!
+
+Se você não instanciar a data vai dar erro no código !
+
+Outra coisa,no método INSERT não precisa da data de atualização,pois é um CADASTRO!
+A data de atualização UpdateAt deve ser chamada no método de alterar!
+
+Se for tirar,lembre-se de tirar do SQL e do STATEMENT!
+
+Se quiser deixar,vai precisar instanciar a data UpdateAt também!
+
+Voce pode fazer isso no método construtor da classe model Project.java !
+dando um new Date(); na data em questão!!!
