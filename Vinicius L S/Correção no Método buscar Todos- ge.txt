@@ -1,0 +1,38 @@
+Correção no Método buscar Todos- getAll():
+
+PRIMEIRO!
+Altere no seu métode de Exception (catch)
+Deixa assim:
+throw new RuntimeException(e.getMessage());
+Vai retornar uma melhor mensagem a respeito do erro!
+
+Do bloco:
+ } catch (Exception e) {
+ throw new RuntimeException(e.getMessage()); // No lugar de erro ao buscar projeto
+
+
+1. SQL INCORRETO!
+
+Aqui você não esta buscando TODOS os projetos e sim um 
+projeto de id X !!!
+sql = "SELECT * FROM projects WHERE ID = ?"
+
+
+SQL CORRETO:
+String sql = "SELECT * FROM projects";
+
+2. Validar se o nome no resultSet é o mesmo do banco de dados de todos os campos!
+Ex.:  project.setDescription(resultSet.getString("Description")); "Description" é  nome que esta no banco de dados?
+
+-----------------------------------------------------------------------------------------------------------------------------
+
+Na classe principal para listar:
+
+ProjectControler projectControler = new ProjectControler();
+List<Project> listaDeProjetos = projectControler.getAll();
+
+        for (Project projeto: listaDeProjetos) {
+            System.out.println("-----------------------------");
+            System.out.println("Nome: "+projeto.getName());
+            System.out.println("Descrição: "+projeto.getDescription());
+        }
