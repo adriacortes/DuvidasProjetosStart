@@ -1,0 +1,16 @@
+Problema não reportado!
+O projeto salvou perfeitamente conforme imagens!
+
+Verifica o seguinte :
+
+ 1. Se o nome dos campos esta de acordo com o banco de dados!
+
+ String sql = "INSERT INTO projects(name, description, createdAt, updatedAt) VALUES (?, ?, ?, ?)";
+
+ Coloca um break point da linha 19 ate a linha 36! assim consegue ver onde pode ser o possivel problema
+ metodo save() e observe a construção do sql,se um dos campos tiver com problema,vai parar nele.
+
+Como o meu teste rodou certinho ( só atualizei os campos pq no meu BD esta diferente) provavelmente o 
+problema está ai.
+
+Se for o caso,faz o insert manualmente para comparar certinho os campos.
