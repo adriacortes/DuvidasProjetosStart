@@ -9,7 +9,7 @@
 ATENÇÃO!
 o botão SALVAR fica dentro do <form>
 o botão EXCLUIR fica fora do  <form> !
-O botão SALVAR vai res responsavel por chamar o MÉTODO DE CADASTRAR OU ATUALIZAR!
+O botão SALVAR vai responsavel por chamar o MÉTODO DE CADASTRAR OU ATUALIZAR!
 
 # Formulario completo:
 
