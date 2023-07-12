@@ -1,4 +1,9 @@
-Fazer cada passo abaixo para o método obterCurso funcionar.
+ATENÇÃO ! ATUALIZE A API 
+
+Link API:
+https://github.com/adriacortes/ApiAngularComPhpProWay
+
+Fazer cada passo abaixo para o método obterCurso funcionar no FRONT:
 
 1.Problema de Cors:
 Colocar o . no arquivo .htaccess (vai resolver o problema de cors) arquivo não é htaccess e sim .htaccess
