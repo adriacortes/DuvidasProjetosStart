@@ -11,7 +11,7 @@ Do bloco:
  throw new RuntimeException(e.getMessage()); // No lugar de erro ao buscar projeto
 
 
-1. SQL INCORRETO!
+1. SQL INCORRETO! Projeto controler !
 
 Aqui você não esta buscando TODOS os projetos e sim um 
 projeto de id X !!!
