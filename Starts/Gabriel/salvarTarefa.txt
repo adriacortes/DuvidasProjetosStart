@@ -13,7 +13,7 @@ String sql = "INSERT INTO tasks ("
               + "completed,"
               + "notes,"
               + "deadline,"
-              + "createdAt) VALUES (?, ?, ?, ?, ?, ?, ?)"; 
+              + "createdAt) VALUES (?, ?, ?, ?, ?, ?, ?)"; //SE ATENTE A REMOVER O CAMPO E O ? DE VALUES
 
 
  connection = ConnectionFactory.getConnection();
@@ -28,11 +28,11 @@ String sql = "INSERT INTO tasks ("
           statement.execute();
 
 
-2. SE OPTAR EM SALVA ESSA DATA ,A MESMA PRECISA SER INSTANCIADA(NEW DATE) !!!]
+2. SE OPTAR EM SALVA ESSA DATA(ATUALIZAÇÃO) ,A MESMA PRECISA SER INSTANCIADA(NEW DATE) !!!
 VOCÊ PODE FAZER ISSO NO PROPRIO METODO SAVE OU NO MODEL DA TAREFA.
 
 task.getUpdateAt().getTime() : Aqui vc tenta pegar uma informação que não existe ! Precisa setar na variavel updateAt a data atual(igual a data de 
-criação).O mesmo serve para a data de 'prazo'.
+criação).
 
 
 3.NO SEU MÉTODO VC NÃO PEGA A DATA DE PRAZO CORRETAMENTE!
