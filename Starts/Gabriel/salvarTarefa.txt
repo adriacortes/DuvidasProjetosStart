@@ -1,3 +1,5 @@
+TaskController.java
+
 1. Você esta fazendo o método de cadastrar uma tarefa,tecnicamente
 não esta alterando,pq esta informando essa data ?
 Não vejo necessidade. 
@@ -13,7 +15,7 @@ String sql = "INSERT INTO tasks ("
               + "completed,"
               + "notes,"
               + "deadline,"
-              + "createdAt) VALUES (?, ?, ?, ?, ?, ?, ?)"; //SE ATENTE A REMOVER O CAMPO E O ? DE VALUES
+              + "createdAt") VALUES (?, ?, ?, ?, ?, ?, ?)"; //SE ATENTE A REMOVER O CAMPO E O ? DE VALUES
 
 
  connection = ConnectionFactory.getConnection();
@@ -23,19 +25,26 @@ String sql = "INSERT INTO tasks ("
           statement.setString(3, task.getDescription());
           statement.setBoolean(4, task.isIsCompleted());
           statement.setString(5, task.getNotes());
-          statement.setDate(6, new Date(task.getCreatedAt().getTime()));
-          statement.setDate(7, new Date(task.getCreatedAt().getTime()));
+          statement.setDate(6, new Date(task.getDeadline().getTime()));
+          statement.setDate(7, new Date(task.getCreatedAt().getTime())); 
+          //STATEMENT 8 REMOVIDO
           statement.execute();
 
 
-2. SE OPTAR EM SALVA ESSA DATA(ATUALIZAÇÃO) ,A MESMA PRECISA SER INSTANCIADA(NEW DATE) !!!
-VOCÊ PODE FAZER ISSO NO PROPRIO METODO SAVE OU NO MODEL DA TAREFA.
+2. SE OPTAR EM SALVAR ESSA DATA(ATUALIZAÇÃO) ,A MESMA PRECISA SER INSTANCIADA(NEW DATE) !!!
+VOCÊ PODE FAZER ISSO NO PROPRIO METODO SAVE() OU NO MODEL DA TAREFA(Task.java).
 
 task.getUpdateAt().getTime() : Aqui vc tenta pegar uma informação que não existe ! Precisa setar na variavel updateAt a data atual(igual a data de 
 criação).
 
+public Task() {
+        this.createdAt = new Date();
+        this.updateAt =  new Date(); 
+}
 
-3.NO SEU MÉTODO VC NÃO PEGA A DATA DE PRAZO CORRETAMENTE!
+
+
+3.NO SEU MÉTODO VC NÃO PEGA A DATA DE PRAZO CORRETAMENTE!(na imagem ta correto,no código não) se tiver corrigido ignora.
 
 connection = ConnectionFactory.getConnection();
           statement = connection.prepareStatement(sql);
